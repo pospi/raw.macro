@@ -5,7 +5,7 @@ const { createMacro } = require("babel-plugin-macros");
 module.exports = createMacro(rawMacros);
 
 function rawMacros({ references, state, babel }) {
-  references.default.forEach(referencePath => {
+  references.loader.forEach(referencePath => {
     if (referencePath.parentPath.type === "CallExpression") {
       requireRaw({ referencePath, state, babel });
     } else {
