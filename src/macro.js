@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const { createMacro } = require("babel-plugin-macros");
 
-export default createMacro(rawMacros);
+module.exports = createMacro(rawMacros);
 
 function rawMacros({ references, state, babel }) {
   references.default.forEach(referencePath => {
